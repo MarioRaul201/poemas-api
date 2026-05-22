@@ -19,6 +19,10 @@ module.exports = {
       const [rows] = await db.query('CALL sp_poet_poems()');
       return rows[0];
     },
+    getPoetByName: async (_, args) => {
+      const [rows] = await db.query('SELECT * FROM Poet WHERE first_name=?', [args.first_name]);
+      return rows;
+    }
   },
   Mutation: {
     addPoet: async (_, args) => {

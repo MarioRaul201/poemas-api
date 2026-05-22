@@ -43,6 +43,7 @@ module.exports = gql`
     poems: [Poem]
     customers: [Customer]
     poetPoems: [PoetPoem]
+    getPoetByName(first_name:String): [Poet]
   }
   type Mutation {
     # Altas
